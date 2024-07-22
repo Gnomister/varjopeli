@@ -1,2 +1,5 @@
 res://main.tscn
+res://Character.gd
 res://level_2.tscn
+res://character.tscn
+res://main.gd
