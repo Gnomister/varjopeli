@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://chpdbf001wcva"]
+[gd_scene load_steps=11 format=3 uid="uid://chpdbf001wcva"]
 
-[ext_resource type="Texture2D" uid="uid://yv6anvr4dkbt" path="res://assets/Tiles.png" id="1_0pdl5"]
-[ext_resource type="Script" path="res://main.gd" id="1_cncpy"]
-[ext_resource type="Texture2D" uid="uid://cwkg5rhmbwn53" path="res://assets/Props.png" id="2_jxy3g"]
-[ext_resource type="PackedScene" uid="uid://cfjric26t3wdn" path="res://character.tscn" id="3_av63a"]
+[ext_resource type="Script" path="res://level_1.gd" id="1_aj25e"]
+[ext_resource type="Texture2D" uid="uid://yv6anvr4dkbt" path="res://assets/Tiles.png" id="2_sgtbh"]
+[ext_resource type="Texture2D" uid="uid://cwkg5rhmbwn53" path="res://assets/Props.png" id="3_2bg1o"]
+[ext_resource type="PackedScene" uid="uid://cfjric26t3wdn" path="res://character.tscn" id="4_788ih"]
+[ext_resource type="PackedScene" uid="uid://bnpfslcos3hfa" path="res://stairs.tscn" id="5_b0cxi"]
+[ext_resource type="PackedScene" uid="uid://c6pmhh7f7lms6" path="res://monster.tscn" id="5_utfdx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d55mf"]
-texture = ExtResource("1_0pdl5")
+texture = ExtResource("2_sgtbh")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -936,7 +938,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_d55mf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fx8fl"]
-texture = ExtResource("2_jxy3g")
+texture = ExtResource("3_2bg1o")
 0:0/0 = 0
 1:0/0 = 0
 3:0/0 = 0
@@ -1136,10 +1138,11 @@ texture = ExtResource("2_jxy3g")
 sources/0 = SubResource("TileSetAtlasSource_fx8fl")
 
 [node name="Main" type="Node"]
-script = ExtResource("1_cncpy")
+script = ExtResource("1_aj25e")
 
 [node name="GlobalDarkener" type="CanvasModulate" parent="."]
-color = Color(1, 1, 1, 0)
+visible = false
+color = Color(0, 0, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -1155,16 +1158,16 @@ tile_set = SubResource("TileSet_eobji")
 format = 2
 layer_0/tile_data = PackedInt32Array(3670039, 0, 14, 3735573, 0, 14, 458758, 524288, 15, 196610, 393216, 13, 131074, 393216, 12, 131075, 458752, 12, 196611, 458752, 13, 196626, 0, 14, 1572865, 196608, 15, 327692, 131072, 1, 393229, 131072, 1, 327693, 196608, 1, 196637, 65536, 15, 1048609, 262144, 0, 1114145, 262144, 1, 1048610, 327680, 0, 1114146, 327680, 1, 1507359, 196608, 14)
 
-[node name="Character" parent="." instance=ExtResource("3_av63a")]
-position = Vector2(170, 347)
+[node name="Character" parent="." instance=ExtResource("4_788ih")]
+position = Vector2(1735, 859)
 
 [node name="SceneObjects" type="Node" parent="."]
 
-[node name="Monster" type="RigidBody2D" parent="SceneObjects"]
-
-[node name="Area2D" type="Area2D" parent="SceneObjects/Monster"]
+[node name="Monster" parent="SceneObjects" instance=ExtResource("5_utfdx")]
 
 [node name="SlipperyPool" type="Area2D" parent="SceneObjects"]
+
+[node name="Stairs" parent="SceneObjects" instance=ExtResource("5_b0cxi")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -1176,8 +1179,12 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="LevelNotes"]
 layout_mode = 0
-offset_left = 227.0
-offset_top = 214.0
-offset_right = 267.0
-offset_bottom = 237.0
-text = "muista pistää camera 2d followaa"
+offset_left = 221.0
+offset_top = 190.0
+offset_right = 653.0
+offset_bottom = 301.0
+text = "muista togglaa GlobalDarkener takas päälle 
+scenetreest"
+autowrap_mode = 2
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]

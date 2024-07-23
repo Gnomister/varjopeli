@@ -112,3 +112,5 @@ shape = SubResource("RectangleShape2D_rgx4p")
 [node name="characterLight" type="PointLight2D" parent="."]
 texture = ExtResource("4_viedr")
 texture_scale = 1.45
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
