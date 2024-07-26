@@ -1,6 +1,8 @@
-res://main.tscn
+res://monster.tscn
+res://monster.gd
+res://level_1.tscn
 res://level_2.tscn
 res://character.tscn
-res://Stairs.gd
-res://level_1.tscn
-res://monster.tscn
+res://PathRails.gd
+res://Testimosa.gd
+res://level_1.gd

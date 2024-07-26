@@ -1,9 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfjric26t3wdn"]
+[gd_scene load_steps=18 format=3 uid="uid://cfjric26t3wdn"]
 
 [ext_resource type="Script" path="res://Character.gd" id="1_1i2vw"]
 [ext_resource type="Texture2D" uid="uid://bxw7taydookev" path="res://assets/Wizzard/Idle/Idle-Sheet.png" id="2_lqsm6"]
 [ext_resource type="Texture2D" uid="uid://frf3out7j5mv" path="res://assets/Wizzard/Run/Run-Sheet.png" id="3_lnqqr"]
 [ext_resource type="Texture2D" uid="uid://ivxixum3em5o" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="4_viedr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jumey"]
+radius = 19.0
+height = 62.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_807xq"]
 atlas = ExtResource("2_lqsm6")
@@ -95,6 +99,9 @@ size = Vector2(26, 13.6875)
 position = Vector2(0, -1)
 script = ExtResource("1_1i2vw")
 metadata/_edit_group_ = true
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_jumey")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.27148, 2.25586)
