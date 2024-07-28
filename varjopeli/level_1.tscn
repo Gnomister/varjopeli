@@ -1388,6 +1388,6 @@ rotates = false
 script = ExtResource("6_6j83q")
 
 [node name="Monster" parent="Path2D/PathRails" node_paths=PackedStringArray("target") instance=ExtResource("5_utfdx")]
-position = Vector2(327.836, 118.61)
+position = Vector2(117.463, 102.354)
 rotation = -3.06185
 target = NodePath("../../../Character")

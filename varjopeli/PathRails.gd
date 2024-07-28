@@ -5,6 +5,11 @@ var SPEED = 0.02
 
 func _process(delta):
 	progress_ratio += SPEED * delta
+	
+func disable_rails():
+	set_process(false)
+	
+func 
 
 
 

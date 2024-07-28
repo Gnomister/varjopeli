@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6pmhh7f7lms6"]
+[gd_scene load_steps=8 format=3 uid="uid://c6pmhh7f7lms6"]
 
 [ext_resource type="Script" path="res://monster.gd" id="1_neb6h"]
 [ext_resource type="Texture2D" uid="uid://cgm0fif7afpsj" path="res://icon.svg" id="1_p5p5e"]
+[ext_resource type="Script" path="res://backup.gd" id="3_as18h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhc4d"]
 radius = 161.028
@@ -48,7 +49,9 @@ debug_enabled = true
 
 [node name="PathfindingUpdater" type="Timer" parent="."]
 wait_time = 0.25
-autostart = true
+
+[node name="backup" type="Node" parent="."]
+script = ExtResource("3_as18h")
 
 [connection signal="body_entered" from="AggroRange" to="." method="_on_aggro_range_body_entered"]
 [connection signal="body_exited" from="AggroRange" to="." method="_on_aggro_range_body_exited"]
