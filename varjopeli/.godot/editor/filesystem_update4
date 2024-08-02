@@ -3,6 +3,4 @@ res://monster.gd
 res://level_2.tscn
 res://character.tscn
 res://monster.tscn
-res://backup.gd
-res://level_1.gd
-res://PathRails.gd
+res://stairs.tscn

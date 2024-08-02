@@ -1332,7 +1332,6 @@ point_count = 16
 script = ExtResource("1_aj25e")
 
 [node name="GlobalDarkener" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1350,7 +1349,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(3670039, 0, 14, 3735573, 0, 14, 458758, 524288, 15, 196610, 393216, 13, 131074, 393216, 12, 131075, 458752, 12, 196611, 458752, 13, 196626, 0, 14, 1572865, 196608, 15, 327692, 131072, 1, 393229, 131072, 1, 327693, 196608, 1, 196637, 65536, 15, 1048609, 262144, 0, 1114145, 262144, 1, 1048610, 327680, 0, 1114146, 327680, 1, 1507359, 196608, 14)
 
 [node name="Character" parent="." instance=ExtResource("4_788ih")]
-position = Vector2(111, 436)
+position = Vector2(324, 216)
 collision_layer = 2
 collision_mask = 3
 
@@ -1367,16 +1366,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="LevelNotes"]
-layout_mode = 0
-offset_left = 221.0
-offset_top = 190.0
-offset_right = 653.0
-offset_bottom = 301.0
-text = "muista togglaa GlobalDarkener takas päälle 
-scenetreest"
-autowrap_mode = 2
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_bia4c")

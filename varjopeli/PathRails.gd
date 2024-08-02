@@ -8,8 +8,6 @@ func _process(delta):
 	
 func disable_rails():
 	set_process(false)
-	
-func 
 
 
 
